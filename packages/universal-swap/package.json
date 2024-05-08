@@ -1,0 +1,25 @@
+{
+  "name": "@furyanetwork/furydex-universal-swap",
+  "version": "1.0.78",
+  "main": "build/index.js",
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@furyanetwork/furydex-common": "^1.0.85",
+    "@furyanetwork/furydex-contracts-sdk": "^1.0.44",
+    "bech32": "1.1.4",
+    "ethers": "^5.0.15",
+    "tronweb": "5.3.2",
+    "ts-protoc-gen": "^0.15.0"
+  },
+  "devDependencies": {
+    "cosmjs-types": "0.8.0",
+    "ts-results": "^3.3.0",
+    "protobufjs": "7.2.6"
+  }
+}

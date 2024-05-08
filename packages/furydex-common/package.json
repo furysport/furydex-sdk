@@ -1,0 +1,33 @@
+{
+  "name": "@furyanetwork/furydex-common",
+  "version": "1.0.85",
+  "main": "build/index.js",
+  "files": [
+    "build/"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios-extensions": "3.1.3",
+    "axios": "0.26.1",
+    "@ethersproject/providers": "^5.0.10",
+    "ethers": "^5.0.15",
+    "@keplr-wallet/types": "^0.11.38",
+    "@cosmjs/amino": "0.31.3",
+    "@cosmjs/cosmwasm-stargate": "0.31.3",
+    "@cosmjs/crypto": "0.31.3",
+    "@cosmjs/proto-signing": "0.31.3",
+    "@cosmjs/stargate": "0.31.3",
+    "@cosmjs/tendermint-rpc": "0.31.3",
+    "bignumber.js": "^9.1.2",
+    "cosmjs-types": "0.8.0",
+    "@furyanetwork/furydex-contracts-sdk": "latest",
+    "@injectivelabs/sdk-ts": "1.12.1"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "bech32": "1.1.4"
+  }
+}

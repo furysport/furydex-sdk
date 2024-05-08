@@ -1,0 +1,16 @@
+{
+  "name": "@furyanetwork/furydex-contracts-sdk",
+  "version": "1.0.44",
+  "access": "public",
+  "main": "build/index.js",
+  "files": [
+    "build/",
+    "@types"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "author": "",
+  "description": ""
+}

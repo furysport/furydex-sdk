@@ -1,0 +1,37 @@
+{
+  "name": "@furyanetwork/ibc-routing",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "files": [
+    "build/"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.27.1-dev125.0",
+    "@furyanetwork/furydex-common": "^1.0.85",
+    "@furyanetwork/furydex-contracts-sdk": "^1.0.44",
+    "@furyanetwork/furydex-universal-swap": "1.0.78",
+    "@xstate/inspect": "^0.8.0",
+    "bech32": "1.1.4",
+    "ethers": "^5.5.1",
+    "tronweb": "5.3.0",
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.32.0",
+    "web-worker": "^1.2.0",
+    "ws": "^8.14.2",
+    "xstate": "^4.38.2",
+    "duckdb-async": "^0.9.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/ws": "^8.5.4",
+    "cosmjs-types": "^0.8.0",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.18.2",
+    "jest-websocket-mock": "^2.5.0",
+    "mockthereum": "^0.2.0",
+    "ts-results": "^3.3.0"
+  }
+}
