@@ -19,7 +19,7 @@ const notAllowSwapFromChainIds = [
   "kawaii_6886-1",
   "furybridge-subnet-2",
   "furybtc-mainnet-1",
-  "Neutaro-1",
+  "kaiyo-1",
   "bitcoin"
 ];
 const notAllowDenom = Object.values(evmDenomsMap).flat();
@@ -38,7 +38,7 @@ const notAllowSwapToChainIds = [
   "kawaii_6886-1",
   "furybridge-subnet-2",
   "furybtc-mainnet-1",
-  "Neutaro-1",
+  "kaiyo-1",
   "bitcoin"
 ];
 export const swapToTokens = flattenTokens.filter((token) => {

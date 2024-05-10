@@ -13,7 +13,7 @@ import {
   FURYB_FURYA_CHANNELS_OLD,
   FURYB_FURYA_CHANNELS_TEST,
   OSMOSIS_FURYA_CHANNELS,
-  NEUTARO_FURYA_CHANNELS
+  KUJIRA_FURYA_CHANNELS
 } from "./constant";
 import { CosmosChainId, NetworkChainId } from "./network";
 
@@ -29,7 +29,7 @@ export type IBCInfoMap = { [key in CosmosChainId]: { [key in NetworkChainId]?: I
 // ibc constants
 
 export const [atom2furya, furya2atom] = ATOM_FURYA_CHANNELS.split(/\s+/);
-export const [neutaro2furya, furya2neutaro] = NEUTARO_FURYA_CHANNELS.split(/\s+/);
+export const [kujira2furya, furya2kujira] = KUJIRA_FURYA_CHANNELS.split(/\s+/);
 export const [inj2furya, furya2inj] = INJECTIVE_FURYA_CHANNELS.split(/\s+/);
 export const [osmosis2furya, furya2osmosis] = OSMOSIS_FURYA_CHANNELS.split(/\s+/);
 export const [furyb2furya, furya2furyb] = FURYB_FURYA_CHANNELS.split(/\s+/);
@@ -49,10 +49,10 @@ export const ibcInfos: IBCInfoMap = {
       timeout: IBC_TRANSFER_TIMEOUT
     }
   },
-  "Neutaro-1": {
+  "kaiyo-1": {
     "furya-1": {
       source: "transfer",
-      channel: neutaro2furya,
+      channel: kujira2furya,
       timeout: IBC_TRANSFER_TIMEOUT
     }
   },
@@ -95,9 +95,9 @@ export const ibcInfos: IBCInfoMap = {
       channel: furya2atom,
       timeout: IBC_TRANSFER_TIMEOUT
     },
-    "Neutaro-1": {
+    "kaiyo-1": {
       source: "transfer",
-      channel: furya2neutaro,
+      channel: furya2kujira,
       timeout: IBC_TRANSFER_TIMEOUT
     },
     "injective-1": {
@@ -165,7 +165,7 @@ export const ibcInfos: IBCInfoMap = {
   }
 };
 
-export const ibcInfosOld: Omit<IBCInfoMap, "osmosis-1" | "cosmoshub-4" | "injective-1" | "noble-1" | "Neutaro-1"> = {
+export const ibcInfosOld: Omit<IBCInfoMap, "osmosis-1" | "cosmoshub-4" | "injective-1" | "noble-1" | "kaiyo-1"> = {
   "furya-1": {
     "furybridge-subnet-2": {
       source: "transfer",

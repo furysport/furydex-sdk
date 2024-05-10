@@ -15,7 +15,7 @@ import {
   USDC_CONTRACT,
   USDT_CONTRACT,
   WETH_CONTRACT,
-  NEUTARO_FURYA_DENOM as NEUTARO_ADDRESS,
+  KUJIRA_FURYA_DENOM as KUJIRA_ADDRESS,
   OCH_CONTRACT
 } from "./constant";
 import { parseAssetInfo } from "./helper";
@@ -95,8 +95,8 @@ export const PAIRS: PairMapping[] = [
     symbols: ["FURY", "WETH"]
   },
   {
-    asset_infos: [{ native_token: { denom: NEUTARO_ADDRESS } }, { token: { contract_addr: USDC_CONTRACT } }],
-    symbols: ["NTMPI", "USDC"]
+    asset_infos: [{ native_token: { denom: KUJIRA_ADDRESS } }, { token: { contract_addr: USDC_CONTRACT } }],
+    symbols: ["KUJI", "USDC"]
   },
   {
     asset_infos: [{ native_token: { denom: FURY } }, { token: { contract_addr: BTC_CONTRACT } }],
@@ -125,7 +125,7 @@ export enum pairLpTokens {
   USDC_FURYX = "furya1nwpfd09mr4rf8d5c9mh43axzezkwyr7dq2lus23jsw4xw2jqkaxqxwmkd3",
   FURY_WETH = "furya1rvr9wk6mdlfysvgp72ltthqvkkd5677mp892efq86yyr9alt0tms2a6lcs",
   FURY_BTC = "furya1jd9lc2qt0ltjsatgnu38xsz8ngp89clp0dpeh8geyjj70yvkn4kqmrmh3m",
-  NTMPI_USDC = "furya1rmvjmwd940ztafxue7630g75px8tqma4jskjuu57fkj0eqahqfgqqwjm00",
+  KUJI_USDC = "furya1rmvjmwd940ztafxue7630g75px8tqma4jskjuu57fkj0eqahqfgqqwjm00",
   OCH_FURY = "furya1xs5aj90d5m8kwfp9t6ghkcpk8d7sy5jsxdsyejjdxudhhfm7wegsdg929d"
 }
 

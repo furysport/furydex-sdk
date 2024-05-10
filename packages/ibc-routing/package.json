@@ -1,6 +1,6 @@
 {
   "name": "@furyanetwork/ibc-routing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "build/index.js",
   "files": [
     "build/"
@@ -8,14 +8,14 @@
   "license": "MIT",
   "dependencies": {
     "@duckdb/duckdb-wasm": "^1.27.1-dev125.0",
-    "@furyanetwork/furydex-common": "^1.0.85",
+    "@furyanetwork/furydex-common": "^1.0.86",
     "@furyanetwork/furydex-contracts-sdk": "^1.0.44",
-    "@furyanetwork/furydex-universal-swap": "1.0.78",
+    "@furyanetwork/furydex-universal-swap": "1.0.79",
     "@xstate/inspect": "^0.8.0",
     "bech32": "1.1.4",
     "ethers": "^5.5.1",
     "tronweb": "5.3.0",
-    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.32.0",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.32.0",
     "web-worker": "^1.2.0",
     "ws": "^8.14.2",
     "xstate": "^4.38.2",
@@ -33,5 +33,13 @@
     "jest-websocket-mock": "^2.5.0",
     "mockthereum": "^0.2.0",
     "ts-results": "^3.3.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "description": ""
 }

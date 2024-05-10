@@ -1,6 +1,6 @@
 {
   "name": "@furyanetwork/furydex-common",
-  "version": "1.0.85",
+  "version": "1.0.86",
   "main": "build/index.js",
   "files": [
     "build/"
@@ -29,5 +29,10 @@
   "devDependencies": {},
   "resolutions": {
     "bech32": "1.1.4"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "description": ""
 }

@@ -34,7 +34,7 @@ import {
   StargateMsg,
   isInPairList,
   BigDecimal,
-  NEUTARO_INFO,
+  KUJIRA_INFO,
   USDC_INFO,
   network,
   FURYX_ETH_CONTRACT,
@@ -422,14 +422,14 @@ export class UniversalSwapHelper {
     });
 
     if (pairExist) return UniversalSwapHelper.generateSwapRoute(offerInfo, askInfo, []);
-    // TODO: hardcode NTMPI -> USDC -> FURY -> X
-    if (isEqual(offerInfo, NEUTARO_INFO)) {
+    // TODO: hardcode KUJI -> USDC -> FURY -> X
+    if (isEqual(offerInfo, KUJIRA_INFO)) {
       const swapRoute = isEqual(askInfo, FURY_INFO) ? [USDC_INFO] : [USDC_INFO, FURY_INFO];
       return UniversalSwapHelper.generateSwapRoute(offerInfo, askInfo, swapRoute);
     }
 
-    // TODO: X -> FURY -> USDC -> NTMPI
-    if (isEqual(askInfo, NEUTARO_INFO)) {
+    // TODO: X -> FURY -> USDC -> KUJI
+    if (isEqual(askInfo, KUJIRA_INFO)) {
       const swapRoute = isEqual(offerInfo, FURY_INFO) ? [USDC_INFO] : [FURY_INFO, USDC_INFO];
       return UniversalSwapHelper.generateSwapRoute(offerInfo, askInfo, swapRoute);
     }

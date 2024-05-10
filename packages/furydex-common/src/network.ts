@@ -47,7 +47,7 @@ import {
   WRAP_TRON_TRX_CONTRACT,
   USDT_ETH_CONTRACT,
   BTC_CONTRACT,
-  NEUTARO_FURYA_DENOM,
+  KUJIRA_FURYA_DENOM,
   OCH_ETH_CONTRACT,
   OCH_CONTRACT,
   FURYDEX_BID_POOL_CONTRACT,
@@ -66,7 +66,7 @@ export type NetworkName =
   | "Tron Network"
   | "Injective"
   | "Noble"
-  | "Neutaro";
+  | "Kujira";
 
 export type CosmosChainId =
   | "furya-1" // furya
@@ -76,7 +76,7 @@ export type CosmosChainId =
   | "injective-1" // injective network
   | "kawaii_6886-1" // kawaii subnetwork
   | "noble-1" // noble network
-  | "Neutaro-1"; //neutaro network;
+  | "kaiyo-1"; //kujira network;
 
 export type EvmChainId =
   | "0x38" // bsc
@@ -106,7 +106,7 @@ export type CoinGeckoId =
   | "scatom"
   | "injective-protocol"
   | "bitcoin"
-  | "neutaro"
+  | "kujira"
   | "och";
 
 export type NetworkType = "cosmos" | "evm";
@@ -249,12 +249,12 @@ export const AtomToken: BridgeAppCurrency = {
   }
 };
 
-export const NeutaroToken: BridgeAppCurrency = {
-  coinDenom: "NTMPI",
-  coinMinimalDenom: "uneutaro",
+export const KujiraToken: BridgeAppCurrency = {
+  coinDenom: "KUJI",
+  coinMinimalDenom: "ukuji",
   coinDecimals: 6,
-  coinGeckoId: "neutaro",
-  coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png",
+  coinGeckoId: "kujira",
+  coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Kujira/chain.png",
   gasPriceStep: {
     low: 0.01,
     average: 0.025,
@@ -318,12 +318,12 @@ export const furyaNetwork: CustomChainInfo = {
       coinImageUrl: "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png"
     },
     {
-      coinDenom: "NTMPI",
-      coinGeckoId: "neutaro",
-      coinMinimalDenom: NEUTARO_FURYA_DENOM,
-      bridgeTo: ["Neutaro-1"],
+      coinDenom: "KUJI",
+      coinGeckoId: "kujira",
+      coinMinimalDenom: KUJIRA_FURYA_DENOM,
+      bridgeTo: ["kaiyo-1"],
       coinDecimals: 6,
-      coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png"
+      coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Kujira/chain.png"
     },
     // {
     //   coinDenom: 'BEP20 AIRI',
@@ -770,29 +770,29 @@ export const chainInfos: CustomChainInfo[] = [
     }
   },
   {
-    // rpc: 'http://rpc.neutaro.tech:26657/',
-    rpc: "https://neutaro.rpc.furya.xyz",
-    rest: "https://neutaro.lcd.furya.xyz",
-    // rest: "http://api.neutaro.tech:1317/",
-    chainId: "Neutaro-1",
-    chainName: "Neutaro",
+    // rpc: 'http://rpc.kujira.tech:26657/',
+    rpc: "https://kujira.rpc.furya.xyz",
+    rest: "https://kujira.lcd.furya.xyz",
+    // rest: "http://api.kujira.tech:1317/",
+    chainId: "kaiyo-1",
+    chainName: "Kujira",
     networkType: "cosmos",
     bip44: {
       coinType: 118
     },
-    bech32Config: defaultBech32Config("neutaro"),
+    bech32Config: defaultBech32Config("kujira"),
     stakeCurrency: {
-      coinDenom: "ntmpi",
-      coinMinimalDenom: "uneutaro",
+      coinDenom: "ukuji",
+      coinMinimalDenom: "ukuji",
       coinDecimals: 6,
-      coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png"
+      coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Kujira/chain.png"
     },
     feeCurrencies: [
       {
-        coinDenom: "ntmpi",
-        coinMinimalDenom: "uneutaro",
+        coinDenom: "ukuji",
+        coinMinimalDenom: "ukuji",
         coinDecimals: 6,
-        coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png",
+        coinImageUrl: "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Kujira/chain.png",
         gasPriceStep: {
           low: 0.01,
           average: 0.025,
@@ -802,7 +802,7 @@ export const chainInfos: CustomChainInfo[] = [
     ],
     currencies: [
       {
-        ...NeutaroToken,
+        ...KujiraToken,
         bridgeTo: ["furya-1"]
       }
     ]

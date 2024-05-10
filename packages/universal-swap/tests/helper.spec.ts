@@ -10,8 +10,8 @@ import {
   INJECTIVE_FURYA_DENOM,
   KWT_BSC_CONTRACT,
   MILKY_BSC_CONTRACT,
-  NEUTARO_INFO,
-  NEUTARO_FURYA_DENOM,
+  KUJIRA_INFO,
+  KUJIRA_FURYA_DENOM,
   NetworkChainId,
   FURY,
   FURYX_CONTRACT,
@@ -37,9 +37,9 @@ import {
   getTokenOnFurya,
   getTokenOnSpecificChainId,
   ibcInfos,
-  oraib2furya,
+  furyb2furya,
   furya2atom,
-  furya2oraib,
+  furya2furyb,
   parseTokenInfoRawDenom,
   toDisplay
 } from "@furyanetwork/furydex-common";
@@ -113,9 +113,9 @@ describe("test helper functions", () => {
       getIbcInfo("foobar" as any, "0x1ae6");
     }).toThrow();
 
-    expect(getIbcInfo("Furya", "oraibridge-subnet-2")).toEqual(ibcInfos["Furya"]["oraibridge-subnet-2"]);
+    expect(getIbcInfo("Furya", "furybridge-subnet-2")).toEqual(ibcInfos["Furya"]["furybridge-subnet-2"]);
     expect(() => {
-      getIbcInfo("osmosis-1", "oraibridge-subnet-2");
+      getIbcInfo("osmosis-1", "furybridge-subnet-2");
     }).toThrow();
   });
 
@@ -135,7 +135,7 @@ describe("test helper functions", () => {
     const keplrAddress = "furya1329tg05k3snr66e2r9ytkv6hcjx6fkxcarydx6";
     const tokenAddress = FURY_BSC_CONTRACT;
     const res = getSourceReceiver(keplrAddress, tokenAddress);
-    expect(res).toBe(`${oraib2furya}/${keplrAddress}`);
+    expect(res).toBe(`${furyb2furya}/${keplrAddress}`);
   });
 
   it("test-getSourceReceiver-should-return-only-address", async () => {
@@ -267,7 +267,7 @@ describe("test helper functions", () => {
       {
         swapRoute: parseToIbcWasmMemo(
           `${FURY_BRIDGE_EVM_ETH_DENOM_PREFIX}0x09beeedf51aa45718f46837c94712d89b157a9d3`,
-          furya2oraib,
+          furya2furyb,
           FURY_BRIDGE_EVM_ETH_DENOM_PREFIX + FURY_ETH_CONTRACT
         ),
         universalSwapType: "other-networks-to-furya"
@@ -281,10 +281,10 @@ describe("test helper functions", () => {
       "0x38",
       "0x09beeedf51aa45718f46837c94712d89b157a9d3",
       {
-        // swapRoute: `${furya2oraib}/furya1234:${USDT_BSC_CONTRACT}`,
+        // swapRoute: `${furya2furyb}/furya1234:${USDT_BSC_CONTRACT}`,
         swapRoute: parseToIbcWasmMemo(
           `${FURY_BRIDGE_EVM_DENOM_PREFIX}0x09beeedf51aa45718f46837c94712d89b157a9d3`,
-          furya2oraib,
+          furya2furyb,
           FURY_BRIDGE_EVM_DENOM_PREFIX + USDT_BSC_CONTRACT
         ),
         universalSwapType: "other-networks-to-furya"
@@ -298,10 +298,10 @@ describe("test helper functions", () => {
       "0x2b6653dc",
       "0x09beeedf51aa45718f46837c94712d89b157a9d3",
       {
-        // swapRoute: `${furya2oraib}/furya1234:${USDT_TRON_CONTRACT}`,
+        // swapRoute: `${furya2furyb}/furya1234:${USDT_TRON_CONTRACT}`,
         swapRoute: parseToIbcWasmMemo(
           `${FURY_BRIDGE_EVM_TRON_DENOM_PREFIX}0x09beeedf51aa45718f46837c94712d89b157a9d3`,
-          furya2oraib,
+          furya2furyb,
           FURY_BRIDGE_EVM_TRON_DENOM_PREFIX + USDT_TRON_CONTRACT
         ),
         universalSwapType: "other-networks-to-furya"
@@ -315,10 +315,10 @@ describe("test helper functions", () => {
       "0x2b6653dc",
       "0x1234",
       {
-        // swapRoute: `${furya2oraib}/${FURY_BRIDGE_EVM_TRON_DENOM_PREFIX}0x1234:${USDT_TRON_CONTRACT}`,
+        // swapRoute: `${furya2furyb}/${FURY_BRIDGE_EVM_TRON_DENOM_PREFIX}0x1234:${USDT_TRON_CONTRACT}`,
         swapRoute: parseToIbcWasmMemo(
           `${FURY_BRIDGE_EVM_TRON_DENOM_PREFIX}0x1234`,
-          furya2oraib,
+          furya2furyb,
           FURY_BRIDGE_EVM_TRON_DENOM_PREFIX + USDT_TRON_CONTRACT
         ),
         universalSwapType: "other-networks-to-furya"
@@ -596,7 +596,7 @@ describe("test helper functions", () => {
 
   it("test-addFuryBridgeRoute-empty-swapRoute", () => {
     const result = addFuryBridgeRoute("receiver", "any" as any, "any" as any);
-    expect(result.swapRoute).toEqual(`${oraib2furya}/receiver`);
+    expect(result.swapRoute).toEqual(`${furyb2furya}/receiver`);
   });
   it("test-addFuryBridgeRoute-empty-sourceReceiver", () => {
     expect(() => addFuryBridgeRoute("", "" as any, "" as any)).toThrow();
@@ -608,17 +608,17 @@ describe("test helper functions", () => {
       flattenTokens.find((item) => item.coinGeckoId === "fanfury" && item.chainId === "Furya")!,
       "foobar"
     );
-    // expect(result.swapRoute).toEqual(`${oraib2furya}/receiver:foobar:orai`);
-    const memo = parseToIbcWasmMemo("foobar", "", "orai");
-    expect(result.swapRoute).toEqual(`${oraib2furya}/receiver:${memo}`);
+    // expect(result.swapRoute).toEqual(`${furyb2furya}/receiver:foobar:fury`);
+    const memo = parseToIbcWasmMemo("foobar", "", "fury");
+    expect(result.swapRoute).toEqual(`${furyb2furya}/receiver:${memo}`);
   });
 
   it.each<[string, any]>([
     [
       "channel-1/furya1234:0x1234",
       {
-        oraiBridgeChannel: "channel-1",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "channel-1",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "",
         finalReceiver: "0x1234",
         tokenIdentifier: ""
@@ -627,8 +627,8 @@ describe("test helper functions", () => {
     [
       "furya1234:0x1234",
       {
-        oraiBridgeChannel: "",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "",
         finalReceiver: "0x1234",
         tokenIdentifier: ""
@@ -637,8 +637,8 @@ describe("test helper functions", () => {
     [
       "furya1234",
       {
-        oraiBridgeChannel: "",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "",
         finalReceiver: "",
         tokenIdentifier: ""
@@ -647,8 +647,8 @@ describe("test helper functions", () => {
     [
       "furya1234:0x1234:atom",
       {
-        oraiBridgeChannel: "",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "",
         finalReceiver: "0x1234",
         tokenIdentifier: "atom"
@@ -657,8 +657,8 @@ describe("test helper functions", () => {
     [
       "furya1234:channel-29/0x1234:atom",
       {
-        oraiBridgeChannel: "",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "channel-29",
         finalReceiver: "0x1234",
         tokenIdentifier: "atom"
@@ -667,8 +667,8 @@ describe("test helper functions", () => {
     [
       "channel-1/furya1234:channel-29/0x1234:atom",
       {
-        oraiBridgeChannel: "channel-1",
-        oraiReceiver: "furya1234",
+        furyBridgeChannel: "channel-1",
+        furyReceiver: "furya1234",
         finalDestinationChannel: "channel-29",
         finalReceiver: "0x1234",
         tokenIdentifier: "atom"
@@ -680,18 +680,18 @@ describe("test helper functions", () => {
 
   it.each<[AssetInfo, AssetInfo, AssetInfo[], SwapOperation[]]>([
     [
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       FURY_INFO,
       [USDC_INFO],
       [
         {
-          orai_swap: {
-            offer_asset_info: NEUTARO_INFO,
+          fury_swap: {
+            offer_asset_info: KUJIRA_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
             ask_asset_info: FURY_INFO
           }
@@ -700,19 +700,19 @@ describe("test helper functions", () => {
     ],
     [
       FURY_INFO,
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       [USDC_INFO],
       [
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
-            ask_asset_info: NEUTARO_INFO
+            ask_asset_info: KUJIRA_INFO
           }
         }
       ]
@@ -723,7 +723,7 @@ describe("test helper functions", () => {
       [],
       [
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: USDC_INFO
           }
@@ -732,48 +732,48 @@ describe("test helper functions", () => {
     ],
     [
       FURYX_INFO,
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       [FURY_INFO, USDC_INFO],
       [
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURYX_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
-            ask_asset_info: NEUTARO_INFO
+            ask_asset_info: KUJIRA_INFO
           }
         }
       ]
     ],
     [
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       FURYX_INFO,
       [USDC_INFO, FURY_INFO],
       [
         {
-          orai_swap: {
-            offer_asset_info: NEUTARO_INFO,
+          fury_swap: {
+            offer_asset_info: KUJIRA_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: FURYX_INFO
           }
@@ -785,7 +785,7 @@ describe("test helper functions", () => {
     expect(getSwapRoute).toEqual(expect.arrayContaining(expectSwapRoute));
     getSwapRoute.forEach((swap) => {
       expect(swap).toMatchObject({
-        orai_swap: expect.objectContaining({
+        fury_swap: expect.objectContaining({
           offer_asset_info: expect.any(Object),
           ask_asset_info: expect.any(Object)
         })
@@ -796,46 +796,46 @@ describe("test helper functions", () => {
   it.each<[AssetInfo, AssetInfo, SwapOperation[]]>([
     [
       FURYX_INFO,
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       [
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURYX_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
-            ask_asset_info: NEUTARO_INFO
+            ask_asset_info: KUJIRA_INFO
           }
         }
       ]
     ],
     [
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       FURYX_INFO,
       [
         {
-          orai_swap: {
-            offer_asset_info: NEUTARO_INFO,
+          fury_swap: {
+            offer_asset_info: KUJIRA_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: FURYX_INFO
           }
@@ -847,7 +847,7 @@ describe("test helper functions", () => {
     expect(getSwapOperationMsgsRoute).toEqual(expect.arrayContaining(expectSwapRoute));
     getSwapOperationMsgsRoute.forEach((swap) => {
       expect(swap).toMatchObject({
-        orai_swap: expect.objectContaining({
+        fury_swap: expect.objectContaining({
           offer_asset_info: expect.any(Object),
           ask_asset_info: expect.any(Object)
         })
@@ -895,35 +895,35 @@ describe("test helper functions", () => {
   it.each<[AssetInfo, AssetInfo, any[], SwapOperation[]]>([
     [
       FURYX_INFO,
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       [
         { poolId: "1", tokenOut: FURY },
         { poolId: "2", tokenOut: USDC_CONTRACT },
-        { poolId: "1", tokenOut: NEUTARO_FURYA_DENOM }
+        { poolId: "1", tokenOut: KUJIRA_FURYA_DENOM }
       ],
       [
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURYX_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
-            ask_asset_info: NEUTARO_INFO
+            ask_asset_info: KUJIRA_INFO
           }
         }
       ]
     ],
     [
-      NEUTARO_INFO,
+      KUJIRA_INFO,
       FURYX_INFO,
       [
         { poolId: "3", tokenOut: USDC_CONTRACT },
@@ -932,19 +932,19 @@ describe("test helper functions", () => {
       ],
       [
         {
-          orai_swap: {
-            offer_asset_info: NEUTARO_INFO,
+          fury_swap: {
+            offer_asset_info: KUJIRA_INFO,
             ask_asset_info: USDC_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: USDC_INFO,
             ask_asset_info: FURY_INFO
           }
         },
         {
-          orai_swap: {
+          fury_swap: {
             offer_asset_info: FURY_INFO,
             ask_asset_info: FURYX_INFO
           }
@@ -968,7 +968,7 @@ describe("test helper functions", () => {
     expect(getSwapOperationMsgsRoute).toEqual(expect.arrayContaining(expectSwapRoute));
     getSwapOperationMsgsRoute.forEach((swap) => {
       expect(swap).toMatchObject({
-        orai_swap: expect.objectContaining({
+        fury_swap: expect.objectContaining({
           offer_asset_info: expect.any(Object),
           ask_asset_info: expect.any(Object)
         })

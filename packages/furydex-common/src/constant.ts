@@ -4,13 +4,9 @@ export const truncDecimals = 6;
 export const atomic = 10 ** truncDecimals;
 
 export const FURY = "ufury";
-export const UAIRI = "uAIRI";
-export const AIRI = "AIRI";
 export const ATOM = "ATOM";
 export const OSMO = "OSMO";
 export const LP = "LP";
-export const KWT = "furye";
-export const MILKY = "milky";
 export const STABLE_DENOM = "usdt";
 export const TRON_DENOM = "trx";
 
@@ -37,7 +33,6 @@ export const AXIOS_TIMEOUT = 10000;
 export const ETHEREUM_SCAN = "https://etherscan.io";
 export const BSC_SCAN = "https://bscscan.com";
 export const TRON_SCAN = "https://tronscan.org";
-export const KWT_SCAN = "https://scan.kawaii.global";
 
 export const FURY_BRIDGE_UDENOM = "ufuryb";
 export const FURY_BRIDGE_EVM_DENOM_PREFIX = "furyb";
@@ -48,42 +43,25 @@ export const FURY_BRIDGE_CHAIN_FEE = "1";
 
 // bsc contracts
 export const FURY_BSC_CONTRACT = "0xA325Ad6D9c92B55A3Fc5aD7e412B1518F96441C0";
-export const AIRI_BSC_CONTRACT = "0x7e2A35C746F2f7C240B664F1Da4DD100141AE71F";
-export const USDT_BSC_CONTRACT = "0x55d398326f99059fF775485246999027B3197955";
-export const WRAP_BNB_CONTRACT = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-export const KWT_BSC_CONTRACT = "0x257a8d1E03D17B8535a182301f15290F11674b53";
-export const MILKY_BSC_CONTRACT = "0x6fE3d0F096FC932A905accd1EB1783F6e4cEc717";
 // tron contracts
 export const USDT_TRON_CONTRACT = "0xa614f803B6FD780986A42c78Ec9c7f77e6DeD13C";
 export const WRAP_TRON_TRX_CONTRACT = "0x891cdb91d149f23B1a45D9c5Ca78a88d0cB44C18";
 
 // erc20 contracts
 export const FURY_ETH_CONTRACT = "0x4c11249814f11b9346808179Cf06e71ac328c1b5";
-export const USDC_ETH_CONTRACT = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
-export const MILKY_ERC_CONTRACT = "0xd567B3d7B8FE3C79a1AD8dA978812cfC4Fa05e75";
-export const WRAP_ETH_CONTRACT = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
-export const OCH_ETH_CONTRACT = "0x19373EcBB4B8cC2253D70F2a246fa299303227Ba";
-export const KWT_DENOM = FURY_BRIDGE_EVM_DENOM_PREFIX + KWT_BSC_CONTRACT;
-export const MILKY_DENOM = FURY_BRIDGE_EVM_DENOM_PREFIX + MILKY_BSC_CONTRACT;
-export const USDT_ETH_CONTRACT = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
 export const FURYX_ETH_CONTRACT = "0x2d869aE129e308F94Cc47E66eaefb448CEe0d03e";
 
 // config for relayer
-export const ATOM_FURYA_CHANNELS = "channel-301 channel-15";
+// export const ATOM_FURYA_CHANNELS = "channel-301 channel-15";
 // export const ATOM_FURYA_CHANNELS="channel-642 channel-124"
-export const OSMOSIS_FURYA_CHANNELS = "channel-216 channel-13";
-export const FURYB_FURYA_CHANNELS = "channel-1 channel-29";
-export const FURYB_FURYA_CHANNELS_TEST = "channel-5 channel-64";
-export const FURYB_FURYA_CHANNELS_OLD = "channel-0 channel-20";
-export const KWT_FURYA_CHANNELS = "channel-0 channel-21";
-export const INJECTIVE_FURYA_CHANNELS = "channel-147 channel-146";
-export const NOBLE_FURYA_CHANNELS = "channel-34 channel-147";
-export const NOBLE_FURYA_CHANNELS_TEST = "channel-35 channel-148";
-export const NEUTARO_FURYA_CHANNELS = "channel-1 channel-189";
+export const OSMOSIS_FURYA_CHANNELS = "channel-8 channel-74222";
+// export const INJECTIVE_FURYA_CHANNELS = "channel-147 channel-146";
+export const NOBLE_FURYA_CHANNELS = "channel-4 channel-42";
+export const KUJIRA_FURYA_CHANNELS = "channel-1 channel-189";
 
 // config for ibc denom
 export const ATOM_FURYA_DENOM = "ibc/A2E2EEC9057A4A1C2C0A6A4C78B0239118DF5F278830F50B4A6BDD7A66506B78";
-export const NEUTARO_FURYA_DENOM = "ibc/576B1D63E401B6A9A071C78A1D1316D016EC9333D2FEB14AD503FAC4B8731CD1";
+export const KUJIRA_FURYA_DENOM = "ibc/576B1D63E401B6A9A071C78A1D1316D016EC9333D2FEB14AD503FAC4B8731CD1";
 export const OSMOSIS_FURYA_DENOM = "ibc/9C4DCD21B48231D0BC2AC3D1B74A864746B37E4292694C93C617324250D002FC";
 export const AIRIBSC_FURYA_DENOM = "ibc/C458B4CC4F5581388B9ACB40774FDFBCEDC77A7F7CDFB112B469794AF86C4A69";
 export const USDTBSC_FURYA_DENOM = "ibc/E8B5509BE79025DD7A572430204271D3061A535CC66A3A28FDEC4573E473F32F";
@@ -95,36 +73,25 @@ export const INJECTIVE_FURYA_DENOM = "ibc/49D820DFDE9F885D7081725A58202ABA2F465C
 export const FURYIBC_INJECTIVE_DENOM = "ibc/C20C0A822BD22B2CEF0D067400FCCFB6FAEEE9E91D360B4E0725BD522302D565";
 
 // config for furya token
-export const AIRI_CONTRACT = "furya10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg";
-export const FURYX_CONTRACT = "furya1lus0f0rhx8s03gdllx2n6vhkmf0536dv57wfge";
-export const USDT_CONTRACT = "furya12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh";
-export const USDC_CONTRACT = "furya15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd";
-export const KWT_CONTRACT = "furya1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5";
-export const MILKY_CONTRACT = "furya1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw";
-export const SCFURY_CONTRACT = "furya1065qe48g7aemju045aeyprflytemx7kecxkf5m7u5h5mphd0qlcs47pclp";
-export const TRX_CONTRACT = "furya1c7tpjenafvgjtgm9aqwm7afnke6c56hpdms8jc6md40xs3ugd0es5encn0";
-export const SCATOM_CONTRACT = "furya19q4qak2g3cj2xc2y3060t0quzn3gfhzx08rjlrdd3vqxhjtat0cq668phq";
-export const XOCH_CONTRACT = "furya1lplapmgqnelqn253stz6kmvm3ulgdaytn89a8mz9y85xq8wd684s6xl3lt";
-export const INJECTIVE_CONTRACT = "furya19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49";
-export const WETH_CONTRACT = "furya1dqa52a7hxxuv8ghe7q5v0s36ra0cthea960q2cukznleqhk0wpnshfegez";
-export const BTC_CONTRACT = "furya10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd";
-export const OCH_CONTRACT = "furya1hn8w33cqvysun2aujk5sv33tku4pgcxhhnsxmvnkfvdxagcx0p8qa4l98q";
+export const FURYX_CONTRACT = "furya1w66gusatju0afgytfkcsm449y7e6jrd4uca0qy0fdcvdy8rl9x3s0jxq4t";
+export const USDT_CONTRACT = "furya1062jkn73ew8gzmrhyr4dc7nhl4q2na4y5d2s720szfdlzzj344dqu67e3g";
+export const USDC_CONTRACT = "furya1s786sa67veppvzj5fe7kzve8tz82ujs3cuxhyt5d5usk3ffcwwrq38kksa";
 
 // config for furya contract
-export const FACTORY_CONTRACT = "furya1hemdkz4xx9kukgrunxu3yw0nvpyxf34v82d2c8";
-export const FACTORY_V2_CONTRACT = "furya167r4ut7avvgpp3rlzksz6vw5spmykluzagvmj3ht845fjschwugqjsqhst";
-export const ROUTER_V2_CONTRACT = "furya1j0r67r9k8t34pnhy00x3ftuxuwg0r6r4p8p6rrc8az0ednzr8y9s3sj2sf";
-export const ORACLE_CONTRACT = "furya18rgtdvlrev60plvucw2rz8nmj8pau9gst4q07m";
-export const STAKING_CONTRACT = "furya19p43y0tqnr5qlhfwnxft2u5unph5yn60y7tuvu";
-export const REWARDER_CONTRACT = "furya15hua2q83fp666nwhnyrn9g8gt9ueenl32qnugh";
-export const CONVERTER_CONTRACT = "furya14wy8xndhnvjmx6zl2866xqvs7fqwv2arhhrqq9";
-export const FURYDEX_LISTING_CONTRACT = "furya1mkr02jzz0jfh34ps6z966uyueu4tlmnyg57nn72pxfq9t9a706tsha5znh";
-export const FURYDEX_BID_POOL_CONTRACT = "furya1r4v3f8p2xethczvw5l5ed8cr05a9dqp6auy2zmz5dyvcq5h5g5kqg6m7vu";
-export const FURYDEX_SMART_ROUTER_CONTRACT = "furya107rze07vst8gzw82vzds6tvpnf2yru6pgutcfsscvxjww8z88ktsgyqgcm";
+export const FACTORY_CONTRACT = "furya10enz8yltawxsnh444c5sppnlltlfs4t5wtypr2d2de984xnln78s7tg0pd";
+export const FACTORY_V2_CONTRACT = "furya10enz8yltawxsnh444c5sppnlltlfs4t5wtypr2d2de984xnln78s7tg0pd";
+export const ROUTER_V2_CONTRACT = "furya1ch29yeq6yhcm38lcugg9qxfk6cytar6e9rw9xr29lnj837ksvnnsvw8cl3";
+export const ORACLE_CONTRACT = "furya1llq6xptk7y26slzcpxs00wnslk5xgrjed6ug3vsys5a6q9kmhddqg4ftaa";
+export const STAKING_CONTRACT = "furya1hp04f5rw7kzq3esru9kzuvshlxxncjgkpw8aaxkmn80860flaspq0srza3";
+export const REWARDER_CONTRACT = "furya1j9g97wvj2j0kk3vkw0e9d0tc43hd6r7v97tskkxk3u04lujpacrsjukxan";
+export const CONVERTER_CONTRACT = "furya1w4drj5z4krtc8cs2knsxmvjucpk0ety20x0xv6u9vn0vj8guj5us23gn9t";
+export const FURYDEX_LISTING_CONTRACT = "furya16qkrvwvzckr2p6ad9nn9lykm88hrxqky6cz8wjlecamsahgt88uqcy4fj0";
+export const FURYDEX_BID_POOL_CONTRACT = "furya15lcvnlgt5zjeyvv7m0y96a7qhvfm5fkmneaamwxkd7jvgm4yfx0sx7pnd6";
+// export const FURYDEX_SMART_ROUTER_CONTRACT = "furya107rze07vst8gzw82vzds6tvpnf2yru6pgutcfsscvxjww8z88ktsgyqgcm";
 
 // Cw20-staking contract
-export const CW20_STAKING_CONTRACT = "furya1xu9yw2xwd55d09pjce28yjklvk2kwwrqw4ql9gvyrs607z26kv0sl99040";
-export const CW20_REWARDER_CONTRACT = "furya1qcktymq49m0ylagwt7jzd7u4phajhgk0ruxr0g3ssxyrkte4u9zqy896gf";
+export const CW20_STAKING_CONTRACT = "furya1hp04f5rw7kzq3esru9kzuvshlxxncjgkpw8aaxkmn80860flaspq0srza3";
+export const CW20_REWARDER_CONTRACT = "furya1j9g97wvj2j0kk3vkw0e9d0tc43hd6r7v97tskkxk3u04lujpacrsjukxan";
 export const CW20_SNAPSHOT_CONTRACT = "furya1hmlnhwu3p2kkzac64un5zkz3za8hscklkyaqu4gagdc756zjyemsyp96kd"; // DAODAO support querrier
 
 // config for evm
@@ -137,9 +104,9 @@ export const IBC_WASM_CONTRACT = "furya195269awwnt5m6c843q6w7hp8rt0k7syfu9de4h0w
 export const IBC_WASM_CONTRACT_TEST = "furya1jtt8c2lz8emh8s708y0aeduh32xef2rxyg8y78lyvxn806cu7q0sjtxsnv";
 
 // Utiliti contract
-export const MULTICALL_CONTRACT = "furya1q7x644gmf7h8u8y6y8t9z9nnwl8djkmspypr6mxavsk9ual7dj0sxpmgwd";
+export const MULTICALL_CONTRACT = "furya19nczmtp93vvn69vfg2hk8wyp0ely20d5zks9s5zxpzxp8qwqz5fsvra0gt";
 
-export const BASE_API_URL = "https://api.furydex.io";
+export const BASE_API_URL = "https://api.furya.xyz";
 
 // websocket consts
 export const WEBSOCKET_RECONNECT_ATTEMPTS = 5;
@@ -191,9 +158,9 @@ export const USDC_INFO = {
   }
 };
 
-export const NEUTARO_INFO = {
+export const KUJIRA_INFO = {
   native_token: {
-    denom: NEUTARO_FURYA_DENOM
+    denom: KUJIRA_FURYA_DENOM
   }
 };
 
